@@ -22,6 +22,7 @@ export default {
     ...mapState(["count", "title"]),
   },
   methods: {
+    //引入修改state的方法
     ...mapMutations(["subCount"]),
   },
 };
