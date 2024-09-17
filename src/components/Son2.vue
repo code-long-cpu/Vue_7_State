@@ -5,21 +5,24 @@
     <!-- ④模板中使用state数据 -->
     从vuex中获取的值：<span>{{ count }}</span>
     <br />
-    <button @click="sub(1)">值 - 1</button>
-    <button @click="sub(5)">值 - 5</button>
-    <button @click="sub(10)">值 - 10</button>
+    <button @click="subCount(1)">值 - 1</button>
+    <button @click="subCount(5)">值 - 5</button>
+    <button @click="subCount(10)">值 - 10</button>
   </div>
 </template>
 
 <script>
 // ①导入mapState
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   // ③计算属性展开映射
   computed: {
     // ②数组引入state数据
     ...mapState(["count", "title"]),
+  },
+  methods: {
+    ...mapMutations(["subCount"]),
   },
 };
 </script>
