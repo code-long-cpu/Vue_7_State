@@ -1,6 +1,8 @@
 // 此处是vuex的核心代码
 import Vue from 'vue'
 import Vuex from 'vuex'
+import user from './modules/user'
+import setting from './modules/setting'
 
 Vue.use(Vuex)
 
@@ -10,10 +12,10 @@ export default new Vuex.Store({
   // 通过state可以提供所有组件可用的数据
   state: {
     title: '我是根组件',
-    count: 100
+    count: 100,
+    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   },
-  getters: {
-  },
+
   // 通过mutations修改state数据
   mutations: {
     addCount(state, n) {
@@ -29,8 +31,21 @@ export default new Vuex.Store({
       state.count -= n;
     }
   },
+  getters: {
+    filterList(state) {
+      return state.list.filter(item => item >= 5)
+    }
+  },
+  //通过action操作异步方法，通过调用mutation中的方法，进而改变mutaitons中的值；
   actions: {
+    AsyncCount(context, num) {
+      setTimeout(() => {
+        context.commit('changeCount', num)
+      }, 1000);
+    }
   },
   modules: {
+    user,
+    setting
   }
 })
