@@ -3,7 +3,9 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>
-      根组件<span> -{{ $store.state.title }} -{{ $store.state.count }}</span>
+      Vue_day_7 根组件<span>
+        -{{ $store.state.title }} -{{ $store.state.count }}</span
+      >
       <br />
     </h1>
     <h3>
@@ -17,9 +19,11 @@
       autocomplete="off"
     />
     <hr />
-    <Son_1></Son_1>
-    <hr />
-    <Son_2></Son_2>
+    <div class="sons">
+      <Son_1></Son_1>
+      <Son_2></Son_2>
+      <cart></cart>
+    </div>
   </div>
 </template>
 
@@ -28,6 +32,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Son_1 from "./components/Son1.vue";
 import Son_2 from "./components/Son2.vue";
+import cart from "./components/cart_demo/cart.vue";
 // ①导入辅助函数
 import { mapState } from "vuex";
 // console.log(mapState(["count", "title"]));
@@ -54,6 +59,7 @@ export default {
     // HelloWorld,
     Son_1,
     Son_2,
+    cart,
   },
 };
 </script>
@@ -66,11 +72,15 @@ export default {
   text-align: left;
   color: #2c3e50;
   margin-top: 60px;
-  width: 440px;
+  width: 1320px;
   border: solid 1px black;
   padding: 10px;
 }
 span {
   color: red;
+}
+.sons {
+  display: flex;
+  flex-shrink: 0;
 }
 </style>
