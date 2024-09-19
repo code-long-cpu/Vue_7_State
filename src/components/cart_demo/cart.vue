@@ -19,6 +19,7 @@ import { mapState } from "vuex";
 
 export default {
   created() {
+    // 页面已启动就发请求数据
     this.$store.dispatch("cart/getList");
   },
   components: {

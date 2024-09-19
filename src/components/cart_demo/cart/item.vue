@@ -6,11 +6,11 @@
     <div class="right">
       <div class="right_up">{{ Info.name }}</div>
       <div class="right_bottom">
-        <p>￥{{ Info.price }}</p>
+        <p>￥ {{ Info.price }}</p>
         <div class="zengjian">
-          <button>-</button>
+          <button @click="btnClick(-1)">-</button>
           <span>{{ Info.count }}</span>
-          <button>+</button>
+          <button @click="btnClick(1)">+</button>
         </div>
       </div>
     </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
 export default {
   created() {
     // console.log(this.Info);
@@ -27,6 +28,23 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    btnClick(step) {
+      const newCount = this.Info.count + step;
+      const id = this.Info.id;
+      // console.log(this.Info.id, newCount);
+      if (newCount < 1) return;
+
+      this.$store.dispatch("cart/updateList", {
+        id,
+        newCount,
+      });
+      // this.$store.dispatch("cart/getList");
+    },
+  },
+  computed: {
+    ...mapGetters("cart", ["total", "totalPrice"]),
   },
 };
 </script>

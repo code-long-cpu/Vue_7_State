@@ -1,13 +1,19 @@
 <template>
   <div class="cart_footer">
-    <span>共XXX件商品，</span>
-    <span>合计：</span><span class="money">￥XXX</span>
+    <span>共{{ total }}件商品，</span>
+    <span>合计：</span><span class="money">￥{{ totalPrice }}</span>
     <button>结算</button>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters("cart", ["total", "totalPrice"]),
+  },
+};
 </script>
 
 <style scoped>
