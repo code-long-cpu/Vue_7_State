@@ -43,11 +43,16 @@ export default {
     console.log(this.$store);
     console.log(this.$store.state.count);
     console.log(mapState(["count"]));
+
+    this.$store.dispatch("cart/getList");
   },
   // ②计算属性展开mapState（）映射
   computed: {
     // ②数组方式引入state数据
     ...mapState(["count", "title"]),
+
+    // 引入cart中list数据
+    ...mapState("cart", ["list"]),
   },
   methods: {
     changeCount(e) {

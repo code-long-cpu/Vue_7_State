@@ -4,6 +4,9 @@ import Vuex from 'vuex'
 import user from './modules/user'
 import setting from './modules/setting'
 
+// 导入购物车state模块
+import cart from './modules/cart'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -46,6 +49,8 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-    setting
+    setting,
+    // 挂在购物车state模块
+    cart
   }
 })

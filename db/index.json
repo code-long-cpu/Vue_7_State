@@ -1,0 +1,49 @@
+{
+  "cart": [
+    {
+      "id": 100001,
+      "name": "社恐人在加州——逛target超市",
+      "price": 128,
+      "count": 3,
+      "thumb": "https://raw.githubusercontent.com/code-long-cpu/long_pic/main//IMG_0684.JPG"
+    },
+    {
+      "id": 100002,
+      "name": "硅谷生活日记——努力玩儿，努力学",
+      "price": 300,
+      "count": 5,
+      "thumb": "https://raw.githubusercontent.com/code-long-cpu/long_pic/main//IMG_0792.JPG"
+    },
+    {
+      "id": 100003,
+      "name": "世界这本书又被我翻了一页——Anocortes",
+      "price": 508,
+      "count": 2,
+      "thumb": "https://raw.githubusercontent.com/code-long-cpu/long_pic/main//IMG_0669.JPG"
+    },
+    {
+      "id": 100004,
+      "name": "恐飞患者安全抵达美国",
+      "price": 448,
+      "count": 5,
+      "thumb": "https://raw.githubusercontent.com/code-long-cpu/long_pic/main//IMG_0666.JPG"
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Nick",
+      "age": 28
+    },
+    {
+      "id": 2,
+      "name": "Melissa",
+      "age": 27
+    },
+    {
+      "id": 3,
+      "name": "ChenBo",
+      "age": 30
+    }
+  ]
+}
