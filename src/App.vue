@@ -43,8 +43,6 @@ export default {
     console.log(this.$store);
     console.log(this.$store.state.count);
     console.log(mapState(["count"]));
-
-    
   },
   // ②计算属性展开mapState（）映射
   computed: {

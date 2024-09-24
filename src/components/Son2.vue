@@ -48,7 +48,7 @@ export default {
     ...mapState(["count", "title", "user", "setting"]),
     ...mapGetters(["filterList"]),
 
-    // 模块module映射
+    // 模块module映射，加模块名
     // 映射模块中的state值，模块需要namespaced
     ...mapState("user", ["userInfo"]),
     ...mapState("setting", ["theme", "desc"]),
@@ -62,7 +62,7 @@ export default {
     ...mapMutations(["subCount", "changeTitle"]),
     ...mapActions(["AsyncCount"]),
 
-    // 模块方法mutation映射
+    // 模块方法mutation映射,加模块名
     ...mapMutations("user", ["changeInfo"]),
     ...mapMutations("setting", ["changeTheme"]),
     ...mapActions("user", ["setUserSecond"]),

@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
 export default {
   created() {
     // console.log(this.Info);
@@ -43,9 +42,7 @@ export default {
       // this.$store.dispatch("cart/getList");
     },
   },
-  computed: {
-    ...mapGetters("cart", ["total", "totalPrice"]),
-  },
+  
 };
 </script>
 

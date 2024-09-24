@@ -45,7 +45,7 @@ export default {
     handleChange(num) {
       this.$store.dispatch("AsyncCount", num);
     },
-    // 模块
+    // 模块，加模块名和方法
     // 调用模块user中的修改信息
     changeInfo(info) {
       this.$store.commit("user/changeInfo", info);
